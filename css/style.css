@@ -13,7 +13,7 @@ body {
   display: flex;
   flex-direction: column;
   font-family: "Red Hat Display", sans-serif;
-  font-size: 0.9375rem;
+  font-size: 1rem;
   font-weight: 400;
   line-height: 1.2;
   background: url("../images/pattern-background-mobile.svg") center top/100% auto no-repeat hsl(225deg, 100%, 94%);
@@ -35,7 +35,11 @@ body {
   color: hsl(224deg, 23%, 55%);
 }
 .attribution a {
-  color: hsl(228deg, 45%, 44%);
+  color: hsl(245deg, 75%, 52%);
+  transition: color 0.3s;
+}
+.attribution a:hover, .attribution a:focus {
+  color: hsla(245deg, 75%, 52%, 0.7);
 }
 
 .img-fluid {
@@ -45,39 +49,73 @@ body {
 
 .card {
   width: 96%;
-  max-width: 328px;
+  max-width: 20.5rem;
   background: white;
-  border-radius: 20px;
+  border-radius: 1.25rem;
   overflow: hidden;
 }
+@media (min-width: 540px) {
+  .card {
+    max-width: 28.125rem;
+  }
+}
 .card__body {
-  padding: 32px 24px 32px;
+  padding: 2rem 1.5rem 2rem;
   text-align: center;
 }
+@media (min-width: 540px) {
+  .card__body {
+    padding: 3rem 3rem 2rem;
+  }
+}
 .card__title {
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 900;
   letter-spacing: -0.05em;
   margin-top: 0;
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
+}
+@media (min-width: 540px) {
+  .card__title {
+    font-size: 1.75rem;
+    letter-spacing: normal;
+  }
 }
 .card__text {
-  padding: 0 16px;
+  padding: 0 1rem;
   line-height: 1.6;
-  margin-bottom: 26px;
+  margin-bottom: 1.625rem;
+}
+@media (min-width: 540px) {
+  .card__text {
+    margin-bottom: 1.25rem;
+  }
 }
 .card__buttons .btn + .btn {
-  margin-top: 10px;
+  margin-top: 0.625rem;
+}
+@media (min-width: 540px) {
+  .card__buttons .btn + .btn {
+    margin-top: 1rem;
+  }
 }
 
 .order-info {
   display: flex;
   align-items: center;
-  gap: 20px;
-  padding: 16px;
+  gap: 1.25rem;
+  padding: 1rem;
   background-color: hsl(225deg, 100%, 98%);
-  border-radius: 16px;
-  margin-bottom: 24px;
+  border-radius: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.875rem;
+}
+@media (min-width: 540px) {
+  .order-info {
+    padding: 1.625rem;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+  }
 }
 .order-info__plan {
   line-height: 1.5;
@@ -88,7 +126,7 @@ body {
 }
 .order-info__change {
   margin-left: auto;
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 700;
   color: hsl(245deg, 75%, 52%);
   transition: all 0.3s ease;
@@ -103,10 +141,10 @@ body {
   display: block;
   width: 100%;
   padding: 1rem;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 700;
   border: none;
-  border-radius: 10px;
+  border-radius: 0.625rem;
   letter-spacing: -0.02em;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -114,7 +152,7 @@ body {
 .btn--primary {
   background-color: hsl(245deg, 75%, 52%);
   color: white;
-  box-shadow: 0 20px 30px -15px hsl(245deg, 75%, 52%);
+  box-shadow: 0 1.25rem 1.875rem -1rem hsl(245deg, 75%, 52%);
 }
 .btn--primary:hover, .btn--primary:focus {
   color: white;

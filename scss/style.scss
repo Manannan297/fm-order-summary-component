@@ -7,6 +7,7 @@ $color-very-pale-blue: hsl(225, 100%, 98%);
 $color-desaturated-blue: hsl(224, 23%, 55%);
 $color-dark-blue: hsl(223, 47%, 23%);
 $font-base: "Red Hat Display", sans-serif;
+$width-tablet: 540px;
 
 *,
 *::before,
@@ -22,7 +23,7 @@ body {
   display: flex;
   flex-direction: column;
   font-family: $font-base;
-  font-size: 0.9375rem;
+  font-size: 1rem;
   font-weight: 400;
   line-height: 1.2;
   background: url("../images/pattern-background-mobile.svg") center top / 100%
@@ -45,7 +46,13 @@ body {
   color: $color-desaturated-blue;
 
   a {
-    color: hsl(228, 45%, 44%);
+    color: $color-bright-blue;
+    transition: color 0.3s;
+
+    &:hover,
+    &:focus {
+      color: $color-bright-blue-hover;
+    }
   }
 }
 
@@ -56,33 +63,54 @@ body {
 
 .card {
   width: 96%;
-  max-width: 328px;
+  max-width: 20.5rem;
   background: white;
-  border-radius: 20px;
+  border-radius: 1.25rem;
   overflow: hidden;
 
+  @media (min-width: $width-tablet) {
+    max-width: 28.125rem;
+  }
+
   &__body {
-    padding: 32px 24px 32px;
+    padding: 2rem 1.5rem 2rem;
     text-align: center;
+
+    @media (min-width: $width-tablet) {
+      padding: 3rem 3rem 2rem;
+    }
   }
 
   &__title {
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 900;
     letter-spacing: -0.05em;
     margin-top: 0;
-    margin-bottom: 16px;
+    margin-bottom: 1rem;
+
+    @media (min-width: $width-tablet) {
+      font-size: 1.75rem;
+      letter-spacing: normal;
+    }
   }
 
   &__text {
-    padding: 0 16px;
+    padding: 0 1rem;
     line-height: 1.6;
-    margin-bottom: 26px;
+    margin-bottom: 1.625rem;
+
+    @media (min-width: $width-tablet) {
+      margin-bottom: 1.25rem;
+    }
   }
 
   &__buttons {
     .btn + .btn {
-      margin-top: 10px;
+      margin-top: 0.625rem;
+
+      @media (min-width: $width-tablet) {
+        margin-top: 1rem;
+      }
     }
   }
 }
@@ -90,11 +118,18 @@ body {
 .order-info {
   display: flex;
   align-items: center;
-  gap: 20px;
-  padding: 16px;
+  gap: 1.25rem;
+  padding: 1rem;
   background-color: $color-very-pale-blue;
-  border-radius: 16px;
-  margin-bottom: 24px;
+  border-radius: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.875rem;
+
+  @media (min-width: $width-tablet) {
+    padding: 1.625rem;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+  }
 
   &__plan {
     line-height: 1.5;
@@ -107,7 +142,7 @@ body {
 
   &__change {
     margin-left: auto;
-    font-size: 13px;
+    font-size: 0.8125rem;
     font-weight: 700;
     color: $color-bright-blue;
     transition: all 0.3s ease;
@@ -125,10 +160,10 @@ body {
   display: block;
   width: 100%;
   padding: 1rem;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 700;
   border: none;
-  border-radius: 10px;
+  border-radius: 0.625rem;
   letter-spacing: -0.02em;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -136,7 +171,7 @@ body {
   &--primary {
     background-color: $color-bright-blue;
     color: white;
-    box-shadow: 0 20px 30px -15px $color-bright-blue;
+    box-shadow: 0 1.25rem 1.875rem -1rem $color-bright-blue;
 
     &:hover,
     &:focus {
