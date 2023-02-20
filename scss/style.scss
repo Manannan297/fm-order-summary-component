@@ -28,6 +28,10 @@ body {
   line-height: 1.2;
   background: url("../images/pattern-background-mobile.svg") center top / 100%
     auto no-repeat $color-pale-blue;
+
+  @media (min-width: $width-tablet) {
+    background-image: url("../images/pattern-background-desktop.svg");
+  }
 }
 
 .container {
